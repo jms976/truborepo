@@ -1,0 +1,6 @@
+!.storybook
+!.lintstagedrc.js
+
+# build directory
+dist/
+build/
