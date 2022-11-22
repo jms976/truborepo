@@ -15,7 +15,6 @@
   },
   "devDependencies": {
     "@mdx-js/react": "^1.6.22",
-    "@storybook/testing-library": "^0.0.13",
     "@types/react": "^18.0.24",
     "@types/react-dom": "^18.0.8",
     "@vitejs/plugin-react": "^2.2.0",
