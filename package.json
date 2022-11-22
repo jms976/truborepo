@@ -17,7 +17,7 @@
     "@typescript-eslint/parser": "latest",
     "eslint": "^8.28.0",
     "eslint-config-prettier": "^8.5.0",
-    "eslint-plugin-react": "latest",
+    "eslint-plugin-react": "^7.31.11",
     "husky": ">=7",
     "lint-staged": ">=10",
     "prettier": "^2.7.1",
