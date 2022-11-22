@@ -1,0 +1,26 @@
+#!/bin/sh
+. "$(dirname "$0")/_/husky.sh"
+
+COMMIT_MSG_FILE=$1
+COMMIT_SOURCE=$2
+SHA1=$3
+if  [[ "$COMMIT_SOURCE" == "message" ]]
+then
+  ref=$(git rev-parse --abbrev-ref HEAD)
+  if [[ $ref =~ \/(([a-z]?)[0-9]*-[0-9]*) ]]
+  then
+    msg=`head -n1 $COMMIT_MSG_FILE`
+    hint=$(cat "$COMMIT_MSG_FILE")
+    ticket="${BASH_REMATCH[1]}"
+    echo "${msg}\n\nRefs: JIRA-${ticket}" > "$COMMIT_MSG_FILE"
+  fi
+else
+  ref=$(git rev-parse --abbrev-ref HEAD)
+  if [[ $ref =~ \/(([a-z]?)[0-9]*-[0-9]*) ]]
+  then
+    hint=$(cat "$COMMIT_MSG_FILE")
+    ticket="${BASH_REMATCH[1]}"
+    echo "\n\nRefs: JIRA-${ticket}" > "$COMMIT_MSG_FILE"
+    echo "$hint" >> "$COMMIT_MSG_FILE"
+  fi
+fi
