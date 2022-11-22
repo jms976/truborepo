@@ -1,5 +1,5 @@
 {
-  "name": "berryProj",
+  "name": "berry-proj",
   "private": true,
   "workspaces": {
     "packages": [
