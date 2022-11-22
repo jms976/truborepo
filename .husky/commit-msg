@@ -1,0 +1,10 @@
+#!/usr/bin/env sh
+. "$(dirname -- "$0")/_/husky.sh"
+
+##!/usr/bin/env bash
+commit_regex='^(init|feat|typo|fix|refactor|chore|test|add|squash|skip|revert)\:\ .*'
+error_msg='해당 키워드를 이용해서 커밋해주세요.\n init|feat|typo|fix|refactor|chore|test|add|squash|skip|revert'
+if ! grep -iqE "$commit_regex" "$1"; then
+    echo "$error_msg" >&2
+    exit 1
+fi
