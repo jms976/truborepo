@@ -13,6 +13,8 @@
   },
   "packageManager": "yarn@3.3.0",
   "devDependencies": {
+    "@commitlint/cli": "^17.3.0",
+    "@commitlint/config-conventional": "^17.3.0",
     "@typescript-eslint/eslint-plugin": "latest",
     "@typescript-eslint/parser": "latest",
     "eslint": "^8.28.0",
@@ -25,14 +27,14 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "lint-staged",
-      "commit-msg": "echo \\”[Husky] commit-msg\\”"
+      "pre-commit": "lint-staged"
     }
   },
   "lint-staged": {
     "*.{ts,tsx}": [
       "eslint --fix",
-      "prettier --write"
+      "prettier --write",
+      "git add"
     ]
   }
 }
