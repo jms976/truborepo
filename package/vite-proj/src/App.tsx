@@ -5,7 +5,7 @@ import str from '@berryProj/common';
 
 function App() {
   const [count, setCount] = useState(0);
-  console.log('test999', str);
+  console.log('test999test', str);
 
   return (
     <div className="App">
